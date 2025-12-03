@@ -14,18 +14,22 @@ You must:
 2.  **Process** the data to handle quality issues and reconcile the datasets.
 3.  **Model** the final output for business consumption (e.g., a Star Schema or Dimensional Model).
 4.  **Analyze** the data to generate key insights.
+5.  **Present** the key findings back to the Head of Sales.
 
 ## 🛠️ Technical Requirements
 * **Language:** Python / PySpark.
 * **Storage:** Delta Lake.
 * **Format:** You may use Python Scripts (`.py`) or Jupyter Notebooks (`.ipynb`).
-* **Architecture:** We expect you to design a pipeline architecture that reflects industry standards for scalability and data quality.
+* **Architecture:** We expect you to design a medallion architecture that reflects industry standards for scalability and data quality.
 
 ## 📂 The Data
-The data is hosted at the following URL:
-* **URL:** [INSERT_S3_URL_HERE]
+To access the data, you must use the **Azure Blob Storage SDK** for Python.
+* **Account Name:** `sttiliedatachallenge`
+* **Container Name:** `til-ie-data-challenge`
+* **SAS Token:** The shared access token will have been provided by email.
+   *(Note: This token provides Read and List permissions only)*
 * **Format:** CSV (Header included)
-* **Files included:** `sales_transactions.csv`, `rebate_transactions.csv`
+* **Files included:** Timestamped `sales_transactions.csv`, `rebate_transactions.csv` files
 
 ## 📝 Deliverables
 You have full autonomy over the project structure. Your submission must include:
@@ -37,13 +41,15 @@ A PySpark pipeline that takes the data from raw source to final analytical table
 A script or notebook that queries your final data model to answer:
 * Total Sales vs. Total Rebates by Region.
 * Top Performing Sales Reps.
-* Any data quality issues found (e.g., How many rebates could not be matched to a sale?).
+* Any other interesting insights you can identify.
+* Any data quality issues found.
 
 ### 3. Presentation
 A PDF or Slide Deck (Max 5 slides) addressed to the **Head of Sales**.
 * Summarize key insights.
 * Highlight data quality issues encountered.
 * Explain your architectural choices and why you chose them.
+* How could the POC be improved upon, how would you further develop the solution if given more time?
 
 ## 🚀 How to Start the Challenge
 1.  Create a repository using the **til-ie-data-challenge-template**.
@@ -52,6 +58,7 @@ A PDF or Slide Deck (Max 5 slides) addressed to the **Head of Sales**.
 4.  Select the **Codespaces** tab.
 5.  Click **Create codespace on main**.
 6.  Wait for the environment to build (approx. 2 mins).
+7.  Connect to the **source data** and build your solution.
 
 ### 📓 Using Jupyter Notebooks
 If you prefer to work in Notebooks:
