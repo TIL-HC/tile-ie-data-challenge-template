@@ -1,3 +1,10 @@
+.env
+# Python artifacts
+__pycache__/
+*.pyc
+
+# Data directories
+data/
 # Ignore everything by default
 *
 
